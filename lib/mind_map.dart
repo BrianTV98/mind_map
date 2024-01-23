@@ -1,8 +1,10 @@
 library mind_map;
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
 /// A Calculator.
 class MindMap extends MultiChildRenderObjectWidget {
   MindMap({
@@ -27,12 +29,10 @@ class MindMap extends MultiChildRenderObjectWidget {
 
   @override
   RenderObject createRenderObject(BuildContext context) =>
-      RenderBranchComponent(
-          dotColor, lineColor, padding, dotRadius, componentWith);
+      RenderBranchComponent(dotColor, lineColor, padding, dotRadius, componentWith);
 
   @override
-  void updateRenderObject(
-      BuildContext context, covariant RenderObject renderObject) {
+  void updateRenderObject(BuildContext context, covariant RenderObject renderObject) {
     (renderObject as RenderBranchComponent).dotColor = dotColor;
     renderObject.lineColor = lineColor;
     renderObject.padding = padding;
@@ -52,12 +52,12 @@ class RenderBranchComponent extends RenderBox
         ContainerRenderObjectMixin<RenderBox, BranchComponentParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, BranchComponentParentData> {
   RenderBranchComponent(
-      this.dotColor,
-      this.lineColor,
-      this.padding,
-      this.dotRadius,
-      this.componentWith,
-      );
+    this.dotColor,
+    this.lineColor,
+    this.padding,
+    this.dotRadius,
+    this.componentWith,
+  );
 
   late Color dotColor;
 
@@ -79,15 +79,11 @@ class RenderBranchComponent extends RenderBox
   @override
   void performLayout() {
     double height = 0;
-    final deflatedConstraints =
-    constraints.deflate(EdgeInsets.only(left: padding.left));
+    final deflatedConstraints = constraints.deflate(EdgeInsets.only(left: padding.left));
 
-    // print('constraints:         $constraints');
-    // print('deflatedConstraints: $deflatedConstraints');
     for (var child = firstChild; child != null; child = childAfter(child)) {
       child.layout(deflatedConstraints, parentUsesSize: true);
-      (child.parentData as BoxParentData).offset =
-          Offset(componentWith + padding.right, height);
+      (child.parentData as BoxParentData).offset = Offset(componentWith + padding.right, height);
       height += child.size.height;
     }
     size = Size(constraints.maxWidth, height);
@@ -95,8 +91,6 @@ class RenderBranchComponent extends RenderBox
 
   @override
   void paint(PaintingContext context, Offset offset) {
-    debugPrint(offset.toString());
-
     /// init line ;
     final Paint linesPaint = Paint()
       ..color = lineColor
@@ -124,8 +118,7 @@ class RenderBranchComponent extends RenderBox
     double maxHeight = 0;
 
     for (var child = firstChild; child != null; child = childAfter(child)) {
-      final BranchComponentParentData childParentData =
-      child.parentData! as BranchComponentParentData;
+      final BranchComponentParentData childParentData = child.parentData! as BranchComponentParentData;
       context.paintChild(child, childParentData.offset + offset);
 
       final centerY = y + child.size.height / 2;
@@ -143,8 +136,7 @@ class RenderBranchComponent extends RenderBox
       } else if (childNumber == childCount - 1) {
         // last child
         end = dotCenter;
-        rect2 =
-            Rect.fromLTWH(graphPadding + offset.dx, centerY - side, side, side);
+        rect2 = Rect.fromLTWH(graphPadding + offset.dx, centerY - side, side, side);
       } else {
         // middle child
         lines
