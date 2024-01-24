@@ -41,103 +41,200 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            margin: const EdgeInsets.only(left: 10),
-            child: const Text('Parent MindMap'),
-          ),
-          Expanded(
-            child: MindMap(
-              padding: const EdgeInsets.only(left: 50),
-              dotRadius: 4,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(10)),
-                  padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Text('Component 1'),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    debugPrint('12313');
-                  },
-                  child: Container(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                margin: const EdgeInsets.only(left: 10),
+                child: const Text('Parent MindMap'),
+              ),
+              MindMap(
+                padding: const EdgeInsets.only(left: 50),
+                dotRadius: 4,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                        child: const Text('Component 1'),
+                      ),
+                      MindMap(
+                        dotRadius: 4,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 1'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 1'),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                                child: const Text('Component 1'),
+                              ),
+                              MindMap(dotRadius: 4, children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  child: const Text('Component 1'),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  child: const Text('Component 1'),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  child: const Text('Component 1'),
+                                ),
+                              ]),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      debugPrint('12313');
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      child: const Text('Component 2'),
+                    ),
+                  ),
+                  Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(10)),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: const Text('Component 2'),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
                       color: Colors.grey,
-                      borderRadius: BorderRadius.circular(10)),
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Text('Component 3'),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    child: const Text('Component 5'),
                   ),
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Text('Component 4'),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Text('Component 5'),
-                ),
-                Container(
-                  decoration: BoxDecoration(
+                  Container(
+                    decoration: BoxDecoration(
                       color: Colors.grey,
-                      borderRadius: BorderRadius.circular(10)),
-                  padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: const Text('Component 6 '),
-                ),
-              ],
-            ),
-          )
-        ],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    child: const Text('Component 5'),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        child: const Text('Component 5121212121'),
+                      ),
+                      MindMap(
+                        dotRadius: 4,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 5121212121'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 5121212121'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 5121212121'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 5121212121'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            child: const Text('Component 5121212121'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
