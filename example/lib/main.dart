@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                             margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            child: const Text('Component 1'),
+                            child: const Text('Component 2'),
                           ),
                           Container(
                             decoration: BoxDecoration(
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                             margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            child: const Text('Component 1'),
+                            child: const Text('Component 3'),
                           ),
                           Row(
                             children: [
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                 margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
-                                child: const Text('Component 1'),
+                                child: const Text('Component 4'),
                               ),
                               MindMap(dotRadius: 4, children: [
                                 Container(
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                   margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                  child: const Text('Component 1'),
+                                  child: const Text('Component 5'),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                   margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                  child: const Text('Component 1'),
+                                  child: const Text('Component 6'),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -129,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                   margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                  child: const Text('Component 1'),
+                                  child: const Text('Component 7'),
                                 ),
                               ]),
                             ],

@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 
 /// A Calculator.
 class MindMap extends MultiChildRenderObjectWidget {
-  MindMap({
+  const MindMap({
     Key? key,
     required List<Widget> children,
     this.dotColor = Colors.purple,
@@ -132,8 +132,8 @@ class RenderBranchComponent extends RenderBox
 
     for (var child = firstChild; child != null; child = childAfter(child)) {
       final BranchComponentParentData childParentData = child.parentData! as BranchComponentParentData;
-      var _offset = Offset(childParentData.offset.dx + offset.dx, childParentData.offset.dy+offset.dy);
-      context.paintChild(child, _offset);
+      var offset0 = Offset(childParentData.offset.dx + offset.dx, childParentData.offset.dy+offset.dy);
+      context.paintChild(child, offset0);
 
       final centerY = y + child.size.height / 2;
       final dotCenter = Offset(componentWith + offset.dx, centerY);
