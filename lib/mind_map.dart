@@ -76,17 +76,30 @@ class RenderBranchComponent extends RenderBox
     }
   }
 
+  double calculatorMaxWidth = 0;
+
+
+
   @override
   void performLayout() {
     double height = 0;
     final deflatedConstraints = constraints.deflate(EdgeInsets.only(left: padding.left));
 
     for (var child = firstChild; child != null; child = childAfter(child)) {
+      // var childContrainsts = deflatedConstraints.copyWith(
+      //   maxWidth: child.size.width
+      // );
       child.layout(deflatedConstraints, parentUsesSize: true);
       (child.parentData as BoxParentData).offset = Offset(componentWith + padding.right, height);
       height += child.size.height;
+      var widthChildItem =  child.size.width;
+      // estimateWidth
+      if(widthChildItem> calculatorMaxWidth){
+        calculatorMaxWidth  = widthChildItem;
+      }
     }
-    size = Size(constraints.maxWidth, height);
+
+    size = Size(calculatorMaxWidth, height);
   }
 
   @override
@@ -119,7 +132,8 @@ class RenderBranchComponent extends RenderBox
 
     for (var child = firstChild; child != null; child = childAfter(child)) {
       final BranchComponentParentData childParentData = child.parentData! as BranchComponentParentData;
-      context.paintChild(child, childParentData.offset + offset);
+      var _offset = Offset(childParentData.offset.dx + offset.dx, childParentData.offset.dy+offset.dy);
+      context.paintChild(child, _offset);
 
       final centerY = y + child.size.height / 2;
       final dotCenter = Offset(componentWith + offset.dx, centerY);
