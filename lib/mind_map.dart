@@ -176,8 +176,10 @@ class RenderBranchComponent extends RenderBox
         ..arcTo(rect1, -pi / 2, -pi / 2, false)
         ..arcTo(rect2, -pi, -pi / 2, false)
         ..lineTo(end.dx, end.dy);
-    } else {
-      // TODO paint something if there is a single child
+    } else if (start != null){
+      lines
+        ..moveTo(offset.dx + 10, (offset.dy + maxHeight) / 2)
+        ..lineTo(start!.dx, start!.dy);
     }
     context.canvas
       ..drawPath(lines, linesPaint)
