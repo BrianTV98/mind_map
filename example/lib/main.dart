@@ -31,17 +31,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -51,8 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Row(
             children: [
               Container(
-                decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10)),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10)
+                        .copyWith(right: 0),
                 margin: const EdgeInsets.only(left: 10),
                 child: const Text('Parent MindMap'),
               ),
@@ -67,8 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
+                        margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10)
+                            .copyWith(right: 0),
                         child: const Text('Component 1'),
                       ),
                       MindMap(
@@ -79,8 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 2'),
                           ),
                           Container(
@@ -88,8 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 3'),
                           ),
                           Row(
@@ -99,8 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                   color: Colors.grey,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 10),
+                                margin: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 10)
+                                    .copyWith(right: 0),
                                 child: const Text('Component 4'),
                               ),
                               MindMap(dotRadius: 4, children: [
@@ -109,8 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     color: Colors.grey,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 10),
+                                  margin: const EdgeInsets.symmetric(
+                                      vertical: 10, horizontal: 10),
                                   child: const Text('Component 5'),
                                 ),
                               ]),
@@ -125,9 +135,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       debugPrint('12313');
                     },
                     child: Container(
-                      decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 10),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 10),
                       child: const Text('Component 2'),
                     ),
                   ),
@@ -136,8 +150,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
                     child: const Text('Component 5'),
                   ),
                   Container(
@@ -145,8 +161,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
                     child: const Text('Component 5'),
                   ),
                   Row(
@@ -156,8 +174,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10).copyWith(right: 0),
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10)
+                            .copyWith(right: 0),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 10),
                         child: const Text('Component 5121212121'),
                       ),
                       MindMap(
@@ -168,8 +189,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 5121212121'),
                           ),
                           Container(
@@ -177,8 +200,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 5121212121'),
                           ),
                           Container(
@@ -186,8 +211,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 5121212121'),
                           ),
                           Container(
@@ -195,8 +222,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 5121212121'),
                           ),
                           Container(
@@ -204,8 +233,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Colors.grey,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 10),
                             child: const Text('Component 5121212121'),
                           ),
                         ],
@@ -218,11 +249,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

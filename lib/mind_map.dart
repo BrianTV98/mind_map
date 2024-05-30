@@ -29,10 +29,12 @@ class MindMap extends MultiChildRenderObjectWidget {
 
   @override
   RenderObject createRenderObject(BuildContext context) =>
-      RenderBranchComponent(dotColor, lineColor, padding, dotRadius, componentWith);
+      RenderBranchComponent(
+          dotColor, lineColor, padding, dotRadius, componentWith);
 
   @override
-  void updateRenderObject(BuildContext context, covariant RenderObject renderObject) {
+  void updateRenderObject(
+      BuildContext context, covariant RenderObject renderObject) {
     (renderObject as RenderBranchComponent).dotColor = dotColor;
     renderObject.lineColor = lineColor;
     renderObject.padding = padding;
@@ -78,24 +80,24 @@ class RenderBranchComponent extends RenderBox
 
   double calculatorMaxWidth = 0;
 
-
-
   @override
   void performLayout() {
     double height = 0;
-    final deflatedConstraints = constraints.deflate(EdgeInsets.only(left: padding.left));
+    final deflatedConstraints =
+        constraints.deflate(EdgeInsets.only(left: padding.left));
 
     for (var child = firstChild; child != null; child = childAfter(child)) {
       // var childContrainsts = deflatedConstraints.copyWith(
       //   maxWidth: child.size.width
       // );
       child.layout(deflatedConstraints, parentUsesSize: true);
-      (child.parentData as BoxParentData).offset = Offset(componentWith + padding.right, height);
+      (child.parentData as BoxParentData).offset =
+          Offset(componentWith + padding.right, height);
       height += child.size.height;
-      var widthChildItem =  child.size.width;
+      var widthChildItem = child.size.width;
       // estimateWidth
-      if(widthChildItem> calculatorMaxWidth){
-        calculatorMaxWidth  = widthChildItem;
+      if (widthChildItem > calculatorMaxWidth) {
+        calculatorMaxWidth = widthChildItem;
       }
     }
 
@@ -131,8 +133,10 @@ class RenderBranchComponent extends RenderBox
     double maxHeight = 0;
 
     for (var child = firstChild; child != null; child = childAfter(child)) {
-      final BranchComponentParentData childParentData = child.parentData! as BranchComponentParentData;
-      var offset0 = Offset(childParentData.offset.dx + offset.dx, childParentData.offset.dy+offset.dy);
+      final BranchComponentParentData childParentData =
+          child.parentData! as BranchComponentParentData;
+      var offset0 = Offset(childParentData.offset.dx + offset.dx,
+          childParentData.offset.dy + offset.dy);
       context.paintChild(child, offset0);
 
       final centerY = y + child.size.height / 2;
@@ -150,7 +154,8 @@ class RenderBranchComponent extends RenderBox
       } else if (childNumber == childCount - 1) {
         // last child
         end = dotCenter;
-        rect2 = Rect.fromLTWH(graphPadding + offset.dx, centerY - side, side, side);
+        rect2 =
+            Rect.fromLTWH(graphPadding + offset.dx, centerY - side, side, side);
       } else {
         // middle child
         lines
@@ -176,10 +181,12 @@ class RenderBranchComponent extends RenderBox
         ..arcTo(rect1, -pi / 2, -pi / 2, false)
         ..arcTo(rect2, -pi, -pi / 2, false)
         ..lineTo(end.dx, end.dy);
-    } else if (start != null){
-      lines
-        ..moveTo(offset.dx + 10, (offset.dy + maxHeight) / 2)
-        ..lineTo(start!.dx, start!.dy);
+    } else {
+      if (start != null) {
+        lines
+          ..moveTo(offset.dx + 10, (offset.dy + maxHeight) / 2)
+          ..lineTo(start.dx, start.dy);
+      }
     }
     context.canvas
       ..drawPath(lines, linesPaint)
