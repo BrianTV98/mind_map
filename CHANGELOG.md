@@ -10,3 +10,8 @@
 
 * TODO: Update sample and demo
 
+## 1.0.2
+
+* TODO: Fix bug: don't  show sub-topic present when only a child.
+  Thank v0ker for this bug report.
+
